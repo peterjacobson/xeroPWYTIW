@@ -33,10 +33,10 @@ router.post('/invoice', function(req, res, next) {
 	xero.call('POST', 'https://api.xero.com/api.xro/2.0/Invoices', xeroRequest, function(err, json) {
 		if (err) {
       // log.error(err);
-      return res.json(400, {error: 'Unable to contact Xero'});
+      return res.status(400).json({error: 'Unable to contact Xero'});
     }
-    console.log(res);
-    return res.json(200, json);
+    console.log(json);
+    // return res.status(200).json(json) //res.json(200, json);
 	}); 
 	res.redirect('/');
 });
