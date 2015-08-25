@@ -6,10 +6,14 @@ block content
 		strong #{locals.description} 
 		? Please, be our guest...
 	form(action="/invoice", method="post")
+		label(for='name') name
+			input(id='name', type='text', placeholder='Your name', name='name')
 		label(for='email') email
 			input(id='email', type='email', placeholder='you@you.com', name='email')
 		label(for='contribution') contribution
-			input(id='contribution', type='number', placeholder='$$$$', name='contribution')
+			input(id='contribution', type='number', placeholder="$ you think it's worth", name='contribution')
+		label(for='payGst') Pay GST?
+			input(id='payGst', type='checkbox', name='payGst')
 		input(type='submit', value="let's do this!")
 
 

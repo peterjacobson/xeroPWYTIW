@@ -13,22 +13,25 @@ router.get('/', function(req, res, next) {
 
 /*POST form to Xero  */
 router.post('/invoice', function(req, res, next) {
+	var taxType = req.body.payGst == 'on' ? 'INPUT2' : 'NONE';
 	var xeroRequest = {
-			Type: "ACCREC",
-			Contact: {
-				Name: "Luke",
-			},
-			Date: "2015-08-25",
-			DueDate: "2015-08-25",
-			LineAmountTypes: "Exclusive",
-			LineItems: [
-				{
-					Description: "Buns",
-					Quantity: 2,
-					UnitAmount: 3,
-					AccountCode: 200,
-				}
-			]
+		Type: "ACCREC",
+		Contact: {
+			Name: req.body.name,
+			EmailAddress: req.body.email,
+		},
+		Date: "2015-08-25",
+		DueDate: "2015-08-25",
+		LineAmountTypes: "Exclusive",
+		LineItems: [
+			{
+				Description: "Hams",
+				Quantity: 1,
+				UnitAmount: req.body.contribution,
+				AccountCode: 200,
+				TaxType: taxType
+			}
+		]
 	}
 	xero.call('POST', '/Invoices', xeroRequest, function(err, json) {
 		if (err) {
