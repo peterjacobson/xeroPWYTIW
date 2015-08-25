@@ -13,6 +13,7 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
-    "xero": "0.0.8"
+    "xero": "0.0.8",
+    "xero-extended": "0.0.7"
   }
 }
