@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1 Hi!
+	p So you want to contribute to 
+		strong #{locals.description}
+		? Please, be our guest...
+	form(action="/invoice", method="post")
+		label(for='email') email
+			input(id='email', type='email', placeholder='you@you.com', name='email')
+		label(for='contribution') contribution
+			input(id='contribution', type='number', placeholder='$$$$', name='contribution')
+		input(type='submit', value="let's do this!")
+
+
