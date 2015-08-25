@@ -18,8 +18,8 @@ router.post('/invoice', function(req, res, next) {
 			Contact: {
 				Name: "Luke",
 			},
-			Date: "2015-08-25T00:00:00",
-			DueDate: "2015-08-25T00:00:00",
+			Date: "2015-08-25",
+			DueDate: "2015-08-25",
 			LineAmountTypes: "Exclusive",
 			LineItems: [
 				{
@@ -30,15 +30,14 @@ router.post('/invoice', function(req, res, next) {
 				}
 			]
 	}
-	xero.call('POST', 'https://api.xero.com/api.xro/2.0/Invoices', xeroRequest, function(err, json) {
+	xero.call('POST', '/Invoices', xeroRequest, function(err, json) {
 		if (err) {
-      // log.error(err);
+      console.log(err);
       return res.status(400).json({error: 'Unable to contact Xero'});
     }
-    console.log(json);
-    // return res.status(200).json(json) //res.json(200, json);
+    return res.status(200).json(json) //res.json(200, json);
 	}); 
-	res.redirect('/');
+	// res.redirect('/');
 });
 
 module.exports = router;
