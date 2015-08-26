@@ -5,7 +5,7 @@ var sendgrid = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
 var config = require('./../config');
 
-var xero = new Xero(process.env.CONSUMER_KEY, process.env.CONSUMER_SECRET, process.env.RSA_PRIVATE_KEY);
+var xero = new Xero(process.env.XERO_CONSUMER_KEY, process.env.XERO_CONSUMER_SECRET, process.env.RSA_PRIVATE_KEY);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
