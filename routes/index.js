@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Xero = require('xero');
+// var sendgrid = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
 var config = require('./../config');
 
@@ -47,6 +48,16 @@ router.post('/invoice', function(req, res, next) {
       console.log(err);
       return res.status(400).json({error: 'Unable to contact Xero'});
     }
+    // var adminInvoiceNotification = {
+    // 	to: config.xeroAdmin.email,
+    // 	from: config.xeroAdmin.email,
+    // 	subject: 'Email Xero PWYTIW Invoice: ' + config.invoiceProjectDescription,
+    // 	text: 'Please jump into Xero and\n 1. Email Invoice,   \n 2. Approve Invoice.\n\nThis is a stopgap measure, will be automated as soon as Xero extend their API to include email functionality'
+    // }
+    // sendgrid.send(adminInvoiceNotification, function(err, json) {
+    // 	if (err) {console.error(err); }
+    // 	console.log(json)
+    // });
     return res.status(200).json(json) //res.json(200, json);
 	}); 
 	// res.redirect('/');
