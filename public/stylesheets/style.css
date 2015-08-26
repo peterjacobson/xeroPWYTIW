@@ -1,16 +1,48 @@
+html {
+	height: 100%;
+}
+
+p, h1, label, a {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
+strong {
+	font-weight: 700;
+}
+
 body {
-  padding: 50px;
+	height: 90%;
+	max-width: 300px;
+	margin: 0;
+  padding: 20px 20px 0 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e2/Native_Bush_Waitakere_Ranges.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+	padding: 30px;
+	background-color: rgba(250, 250, 250, 0.5)
 }
 
 a {
-  color: #00B7FF;
+  color: '#2838A1';
+  text-decoration: none;
 }
 
 label.hidden {
-	margin-left: -100%;
+	margin-left: -200%;
 }
 
 p {
 	max-width: 300px;
+}
+
+.button {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: rgb(250, 250, 250);
 }
