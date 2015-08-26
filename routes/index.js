@@ -72,7 +72,7 @@ function emailAdminToEmailInvoiceToClient() {
   	to: config.xeroAdmin.email,
   	from: config.xeroAdmin.email,
   	subject: 'Email Xero PWYTIW Invoice: ' + config.invoiceProjectDescription,
-  	text: 'Please jump into Xero and\n 1. Email Invoice,   \n 2. Approve Invoice.\n\nThis is a stopgap measure, will be automated as soon as Xero extend their API to include email functionality'
+  	text: "Kia ora!\nPretty please jump into Xero and\n 1. Email this new unapproved invoice to the contributor (just hit the email button on the invoice),   \n 2. Approve Invoice (so we know it's been emailled)\n\nThis is a stopgap measure, will be automated as soon as Xero extend their API to include email functionality\nNga mihi,\n\nLuke & Pete\npete.jacobson@enspiral.com"
   }
   sendgrid.send(adminInvoiceNotification, function(err, json) {
   	if (err) {console.error(err); }
