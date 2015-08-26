@@ -6,17 +6,19 @@ block content
 	strong #{locals.description}?
 	p Please, be our guest...
 	form(action="/invoice", method="post")
-		label(class='hidden' for='name') name
-		br
+		label(for='name') #[strong name: ]
 		input(id='name', type='text', placeholder='Your name ;)', name='name', required)
 		br
-		label(class='hidden' for='email') email
 		br
+		label(for='email') #[strong email: ]
 		input(id='email', type='email', placeholder='email@whatever.com', name='email', required)
-		label(class='hidden' for='contribution') contribution
-		p $$
+		br
+		br
+		label(for='contribution') #[strong $$: ]
 			input(id='contribution', type='number', placeholder="what you think it's worth", name='contribution', required)
-		label(for='payGst') Pay GST?
+		br
+		br
+		label(for='payGst') #[strong Pay GST? ]
 		input(id='payGst', type='checkbox', name='payGst')
 		br
 		br
