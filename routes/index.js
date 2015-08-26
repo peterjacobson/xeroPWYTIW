@@ -18,9 +18,15 @@ router.get('/', function(req, res, next) {
 /*POST form to Xero  */
 router.post('/invoice', function(req, res, next) {
 	createXeroInvoice(req, emailAdminToEmailInvoiceToClient)
-	
-	// res.redirect('/');
+	res.redirect('/thanks');
 });
+
+/* GET thank you page. */
+router.get('/thanks', function(req, res, next) {
+  res.render('thanks');
+});
+
+
 
 function createXeroInvoice(req, notifyAdminByEmailOnSuccess) {
 
@@ -56,24 +62,24 @@ function createXeroInvoice(req, notifyAdminByEmailOnSuccess) {
       console.log(err);
       return res.status(400).json({error: 'Unable to contact Xero'});
     }
-    notifyAdminByEmailOnSuccess()
+    res = notifyAdminByEmailOnSuccess()
 	}); 
 }
 
 function emailAdminToEmailInvoiceToClient() {
+
 	var adminInvoiceNotification = {
   	to: config.xeroAdmin.email,
   	from: config.xeroAdmin.email,
   	subject: 'Email Xero PWYTIW Invoice: ' + config.invoiceProjectDescription,
   	text: 'Please jump into Xero and\n 1. Email Invoice,   \n 2. Approve Invoice.\n\nThis is a stopgap measure, will be automated as soon as Xero extend their API to include email functionality'
   }
-
   sendgrid.send(adminInvoiceNotification, function(err, json) {
   	if (err) {console.error(err); }
   	console.log('email sent');
   	console.log(json)
   });
-  return res.status(200).json(json) //res.json(200, json);
+  // return res.status(200).json(json) //res.json(200, json);
 }
 
 module.exports = router;
