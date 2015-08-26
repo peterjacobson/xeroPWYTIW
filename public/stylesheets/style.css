@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+label.hidden {
+	margin-left: -100%;
+}
+
+p {
+	max-width: 300px;
+}

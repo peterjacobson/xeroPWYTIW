@@ -2,18 +2,25 @@ extends layout
 
 block content
 	h1 Hi!
-	p So you want to contribute to 
-		strong #{locals.description} 
-		? Please, be our guest...
+	p So you want to contribute to:
+	strong #{locals.description}?
+	p Please, be our guest...
 	form(action="/invoice", method="post")
-		label(for='name') name
-			input(id='name', type='text', placeholder='Your name', name='name')
-		label(for='email') email
-			input(id='email', type='email', placeholder='you@you.com', name='email')
-		label(for='contribution') contribution
-			input(id='contribution', type='number', placeholder="$ you think it's worth", name='contribution')
+		label(class='hidden' for='name') name
+		br
+		input(id='name', type='text', placeholder='Your name ;)', name='name')
+		br
+		label(class='hidden' for='email') email
+		br
+		input(id='email', type='email', placeholder='email@whatever.com', name='email')
+		label(class='hidden' for='contribution') contribution
+		p $$
+			input(id='contribution', type='number', placeholder="what you think it's worth", name='contribution')
 		label(for='payGst') Pay GST?
-			input(id='payGst', type='checkbox', name='payGst')
-		input(type='submit', value="let's do this!")
+		input(id='payGst', type='checkbox', name='payGst')
+		br
+		br
+		br
+		input(type='submit', value="Invoice me - let's do this!")
 
 
