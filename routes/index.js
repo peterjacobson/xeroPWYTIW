@@ -5,6 +5,7 @@ var sendgrid = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
 var config = require('./../config');
 
+console.log(XERO_CONSUMER_KEY);
 var xero = new Xero(process.env.XERO_CONSUMER_KEY, process.env.XERO_CONSUMER_SECRET, process.env.RSA_PRIVATE_KEY);
 
 /* GET home page. */
