@@ -51,7 +51,7 @@ function createXeroInvoice(req, notifyAdminByEmailOnSuccess) {
 				Description: config.invoiceProjectDescription,
 				Quantity: 1,
 				UnitAmount: req.body.contribution,
-				AccountCode: 200,
+				AccountCode: config.invoiceAccountNumber,
 				TaxType: taxType
 			}
 		]
