@@ -6,22 +6,21 @@ block content
 	strong #{locals.description}?
 	p Please, be our guest...
 	form(action="/invoice", method="post")
-		label(for='name') #[strong name: ]
+		label(for='name') #[strong Name: ]
 		input(id='name', type='text', placeholder='Your name ;)', name='name', required)
+		div The legal entity you would like the invoice made out to
 		br
-		br
-		label(for='email') #[strong email: ]
+		label(for='email') #[strong Email: ]
 		input(id='email', type='email', placeholder='email@whatever.com', name='email', required)
 		br
 		br
 		label(for='contribution') #[strong $$: ]
-			input(id='contribution', type='number', placeholder="what you think it's worth", name='contribution', required)
+			input(id='contribution', type='number', placeholder="your contribution", name='contribution', required)
+		div In NZD
 		br
-		br
-		label(for='payGst') #[strong Pay GST? ]
-		input(id='payGst', type='checkbox', name='payGst')
-		br
-		br
+		label(for='payGst') #[strong Include GST? ]
+		input(id='payGst', type='checkbox', name='payGst', checked='checked')
+		div (Untick this if you are not in NZ)
 		br
 		input(type='submit', value="Invoice me - let's do this!")
 
