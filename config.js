@@ -3,8 +3,8 @@ module.exports = {
 		email: 'joshua@enspiral.com',
 		name: 'Joshua'
 	},
-	invoiceProjectDescription: 'Individual monthly membership',
+	invoiceProjectDescription: 'Sponsorship of September 2015 checkin',
 	invoiceAccountNumber: 206,
-	projectIntroduction: "Variable individual contributions in cobudget",
+	projectIntroduction: "Sponsor the Enspiral September 2015 checkin post",
 	daysUntilPaymentDue: 3
 }
