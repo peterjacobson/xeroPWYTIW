@@ -11,7 +11,7 @@ var xero = new Xero(process.env.XERO_CONSUMER_KEY, process.env.XERO_CONSUMER_SEC
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-  	description: 'Luke and pete to make this awesome app'
+  	description: 'The Enspiral foundation cobudget process'
   });
 });
 
