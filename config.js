@@ -1,9 +1,9 @@
 module.exports = {
 	xeroAdmin: {
-		email: 'peterjacobson.nz@gmail.com',
-		name: 'Pete'
+		email: 'joshua@enspiral.com',
+		name: 'Joshua'
 	},
-	invoiceProjectDescription: 'Orientation App Game',
-	projectIntroduction: "An app to gamify Enspiral's orientation process",
-	daysUntilPaymentDue: 30
+	invoiceProjectDescription: 'Individual monthly membership',
+	projectIntroduction: "Variable individual contributions in cobudget",
+	daysUntilPaymentDue: 3
 }
