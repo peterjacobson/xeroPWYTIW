@@ -11,7 +11,7 @@ var xero = new Xero(process.env.XERO_CONSUMER_KEY, process.env.XERO_CONSUMER_SEC
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-  	description: 'September 2015 checkin post sponsorship?'
+  	description: 'October 2015 checkin post sponsorship?'
   });
 });
 
